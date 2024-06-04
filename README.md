@@ -60,4 +60,9 @@ POLLA 在大规模数据集上的实验表明其性能优越，达到了当前�
 
 在`METR-LA`数据集上运行结果如下所示：
 
-![res](./pic/res.jpg)
+![res](./pic/res_metr.jpg)
+
+在`PEMS-Bays`数据集上运行结果如下所示：
+
+![res](./pic/res_pems.png)
+
