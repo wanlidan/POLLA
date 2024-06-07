@@ -26,10 +26,12 @@ POLLA 模型在多个大规模数据集上进行了验证，包括：
 数据集文件路径如下：
 > - POLLA/data/metr-la.h5 
 > - POLLA/data/sensor_graph/adj_mx.pkl
+> - POLLA/data/pems-bay.h5
+> - POLLA/data/sensor_graph/adj_mx_bay.pkl
 
 
 #### 交通速度预测任务
-对于交通速度预测任务，将训练/验证/测试集拆分为整个数据集的70%/10%/20%；对于交通流量预测任务，将训练集/验证集/测试集分割为整个数据集的60%/20%/20%。
+对于交通速度预测任务，将训练/验证/测试集拆分为整个数据集的70%/10%/20%；
 
 ### 依赖库
 - python==3.6.4
@@ -41,10 +43,19 @@ POLLA 模型在多个大规模数据集上进行了验证，包括：
 - tables==3.7.0
 
 ### 运行方法
+> - POLLA/scripts/  # PyTorch版本运行脚本目录
+> - Mindspore版本 : **torch** -> **msadapter.pytorch**
 
+在METR-LA数据集上运行
 ```python
 python main_polla_exp.py --model polladiff --data metr --seq_len 12 --pred_len 12 --d_model 64 --n_layers 3 --n_heads 8 --d_ff 256 --train_epochs 4 --patience 10 --itr 2 --loss mae
 ```
+在PEMS-Bay数据集上运行
+```python
+python main_polla_exp.py --model polladiff --data pems --seq_len 12 --pred_len 12 --d_model 64 --n_layers 3 --n_heads 8 --d_ff 256 --train_epochs 4 --patience 10 --itr 2 --loss mae
+```
+
+
 
 ### 实验结果
 
